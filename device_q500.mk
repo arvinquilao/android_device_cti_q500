@@ -3,11 +3,11 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 # The gps config appropriate for this device
 $(call inherit-product, device/common/gps/gps_us_supl.mk)
 
-$(call inherit-product-if-exists, vendor/xolo/q500/q500-vendor.mk)
+$(call inherit-product-if-exists, vendor/cti/q500/q500-vendor.mk)
 
-DEVICE_PACKAGE_OVERLAYS += device/xolo/q500/overlay
+DEVICE_PACKAGE_OVERLAYS += device/cti/q500/overlay
 
-LOCAL_PATH := device/xolo/q500
+LOCAL_PATH := device/cti/q500
 ifeq ($(TARGET_PREBUILT_KERNEL),)
 	LOCAL_KERNEL := $(LOCAL_PATH)/kernel
 else
@@ -15,7 +15,8 @@ else
 endif
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_KERNEL):kernel
+    $(LOCAL_KERNEL):kernel \
+    device/cti/q500/twrp.fstab:recovery/root/etc/twrp.fstab
 
 $(call inherit-product, build/target/product/full.mk)
 
