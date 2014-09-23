@@ -1,9 +1,9 @@
 USE_CAMERA_STUB := true
 
 # inherit from the proprietary version
--include vendor/cti/q500/BoardConfigVendor.mk
+-include vendor/xolo/q500/BoardConfigVendor.mk
 
-LOCAL_PATH := device/cti/q500
+LOCAL_PATH := device/xolo/q500
 
 TARGET_ARCH := arm
 TARGET_NO_BOOTLOADER := true
